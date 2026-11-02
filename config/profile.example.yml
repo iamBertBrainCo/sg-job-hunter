@@ -1,0 +1,193 @@
+# Singapore Job Search Profile — Example
+# 1. Copy this file to config/profile.yml
+# 2. Edit every field with your own details
+# 3. Be specific about target roles (e.g., "Data Engineer" not "Tech Roles")
+# 4. Be honest about salary expectations (Singapore market rates)
+# 5. Update regularly as your situation changes
+#
+# This file is your source of truth for targeting.
+# The system uses it to score every job you evaluate.
+#
+# 💡 TIP: The more specific your target roles, the better the matching.
+# Include both exact titles and close variants.
+
+candidate:
+  full_name: "Your Full Name"
+  # Optional. Professional headline shown directly under the name on the CV.
+  # Tailor it to the JD's own title wording when your real level supports it -
+  # never inflate. Omit or leave blank for no title element.
+  # title: "Senior Backend Engineer"
+  email: "your.email@example.com"
+  # Optional. Total years of professional experience. A number (2.5 is fine).
+  years_of_experience: 5
+  # Optional. Any other mailboxes that are also you.
+  # alternate_emails:
+  #   - "you@previous-employer.example"
+  phone: "+65 9XXX XXXX"
+  location: "Singapore"
+  timezone: "Asia/Singapore"
+  linkedin: "linkedin.com/in/yourprofile"
+  # Optional. Portfolio or personal site URL. Omit if not applicable.
+  portfolio: "your-portfolio.com"
+
+# ─── TARGET ROLES ───
+# Primary roles get applied to immediately when a job scores 4.0+
+# Secondary roles are evaluated with a softer threshold
+# Be exact — use the titles companies actually use in job postings
+#
+# 💡 Industry examples (pick what matches YOUR field):
+#
+# Software Engineering:
+#   - "Software Engineer", "Backend Developer", "Full Stack Developer"
+#   - "Frontend Developer", "Mobile Developer", "DevOps Engineer"
+#
+# Data & AI:
+#   - "Data Scientist", "Data Engineer", "Machine Learning Engineer"
+#   - "AI Engineer", "Data Analyst", "Business Intelligence Analyst"
+#
+# Finance:
+#   - "Financial Analyst", "Risk Manager", "Compliance Officer"
+#   - "Investment Analyst", "FP&A Manager", "Treasury Manager"
+#
+# Life Sciences:
+#   - "Regulatory Affairs Manager", "QA Manager", "Process Development Scientist"
+#   - "Clinical Affairs Specialist", "Biotechnologist"
+#
+# Green Economy:
+#   - "Sustainability Manager", "ESG Consultant", "Energy Efficiency Manager"
+#   - "Carbon Footprint Analyst", "Green Building Consultant"
+#
+# Manufacturing:
+#   - "Process Engineer", "Automation Engineer", "Production Manager"
+#   - "Quality Engineer", "Manufacturing Engineer"
+#
+# Digital Marketing:
+#   - "Digital Marketing Manager", "Performance Marketing Specialist"
+#   - "SEO Specialist", "E-commerce Manager", "Growth Hacker"
+#
+# Care Economy:
+#   - "Social Worker", "Clinical Psychologist", "Occupational Therapist"
+#   - "Community Care Manager", "Programme Manager"
+#
+# L&D / OD (retained for backwards compatibility):
+#   - "Learning & Development Manager", "Organisational Development Manager"
+#   - "Training Manager", "Talent Development Consultant"
+
+target_roles:
+  primary:
+    - "Your Primary Role Title 1"
+    - "Your Primary Role Title 2"
+    - "Your Primary Role Title 3"
+  secondary:
+    - "Your Secondary Role Title 1"
+    - "Your Secondary Role Title 2"
+    - "Your Secondary Role Title 3"
+
+# ─── COMPENSATION ───
+# Monthly gross in SGD. Typical bonus: 1-3 months.
+# CPF: employer contributes 17% of salary (significant hidden value).
+#
+# 💡 Check data/salary-benchmarks-2026.md for market rates by sector.
+# Be realistic but don't undersell yourself.
+
+compensation:
+  target_range: "SGD 7,000 - 10,000"
+  currency: "SGD"
+  minimum: "SGD 7,000"
+  notes: |
+    - Monthly gross salary
+    - Open to total compensation discussion (bonus, CPF, allowances)
+    - Government roles: accept market rate for grade
+    - Startup roles: open to equity discussion
+
+# ─── LOCATION ───
+
+location:
+  country: "Singapore"
+  city: "Singapore"
+  timezone: "Asia/Singapore"
+  preferences:
+    - "Central (CCA)"
+    - "East"
+    - "West"
+    - "North East"
+  remote: "Hybrid (2-3 days office)"
+  notes: |
+    - Singapore first
+    - Open to ASEAN expansion (Malaysia, Indonesia, Thailand, Philippines, Vietnam)
+    - Not considering Cambodia, Myanmar
+
+# ─── DEAL BREAKERS ───
+# Roles that are automatically a no, whatever the score.
+#
+# 💡 Common deal breakers by industry:
+# Tech: "No legacy tech (COBOL, mainframe)", "No on-call rotation"
+# Finance: "No sales roles", "No compliance-only roles"
+# Manufacturing: "No shift work", "No plant floor only"
+# General: "No junior roles", "No on-site only"
+
+deal_breakers:
+  - "No sales roles (unless technical sales)"
+  - "No junior roles (Executive, Assistant, Associate)"
+  - "No on-site only (must have hybrid/remote option)"
+  - "No companies with toxic culture (check Glassdoor)"
+
+# ─── NARRATIVE ───
+# The story that ties your CV together. Used by evaluators and application generators.
+
+narrative:
+  headline: "Your professional headline — what makes you unique"
+  superpowers:
+    - "Your key strength 1"
+    - "Your key strength 2"
+    - "Your key strength 3"
+  proof_points:
+    - name: "Achievement 1"
+      hero_metric: "~1,800"
+      context: "Context for the achievement"
+    - name: "Achievement 2"
+      hero_metric: "6-person"
+      context: "Context for the achievement"
+    - name: "Achievement 3"
+      hero_metric: "200+"
+      context: "Context for the achievement"
+  exit_narrative: |
+    Brief story about why you're looking for a new role and what you're seeking.
+    Connect your past experience to your future goals.
+
+# ─── ARCHETYPES ───
+# Describe the kinds of roles you want, in order of fit.
+# This helps the evaluator understand your preferences beyond job titles.
+
+archetypes:
+  - name: "Your Ideal Role Type 1"
+    level: "Manager"
+    fit: "primary"
+    description: "What this role involves"
+  - name: "Your Ideal Role Type 2"
+    level: "Lead"
+    fit: "primary"
+    description: "What this role involves"
+  - name: "Your Ideal Role Type 3"
+    level: "Senior"
+    fit: "secondary"
+    description: "What this role involves"
+
+# ─── SPEND TIER ───
+# Options: economy, standard, premium.
+# economy: cheapest and fastest, good for scanning lots of offers quickly
+# standard: balanced cost and quality (default if you're not sure)
+# premium: most capable model, best for offers you really care about
+spend_tier: "standard"
+
+# ─── LANGUAGE ───
+# output: human-facing output language
+# modes_dir: market vocabulary and local evaluation rules
+language:
+  output: "en"
+  modes_dir: "modes/sg"
+
+# ─── CV OUTPUT ───
+cv:
+  output_format: "pdf"
+  template: "default"

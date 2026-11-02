@@ -1,0 +1,72 @@
+{
+  "name": "sg-job-hunter",
+  "version": "2.0.0",
+  "description": "Automated job search system for Singapore and ASEAN PMET professionals — all industries",
+  "main": "lib/index.mjs",
+  "type": "module",
+  "scripts": {
+    "setup": "node setup.mjs",
+    "onboard": "node onboard.mjs",
+    "doctor": "node doctor.mjs",
+    "evaluate": "node lib/evaluate.mjs",
+    "scan": "node lib/scan.mjs",
+    "scrape": "node lib/scrape-jobs.mjs",
+    "scrape-more": "node lib/scrape-more-jobs.mjs",
+    "fetch-jds": "node lib/fetch-jds.mjs",
+    "convert-cv": "node convert-cv-to-pdf.mjs",
+    "convert-cover-letter": "node convert-cover-letter-to-pdf.mjs",
+    "merge-tracker": "node lib/merge-tracker.mjs",
+    "set-status": "node lib/set-status.mjs",
+    "analyze": "node lib/analyze-patterns.mjs",
+    "stats": "node lib/stats.mjs",
+    "verify": "node lib/verify-pipeline.mjs",
+    "check-liveness": "node lib/check-liveness.mjs",
+    "reserve-report": "node lib/reserve-report-num.mjs",
+    "followup": "node lib/followup-cadence.mjs",
+    "coverage": "node lib/coverage-check.mjs",
+    "upskill": "node lib/upskill.mjs",
+    "salary-gap": "node lib/salary-gap.mjs",
+    "salary-benchmarks": "node lib/salary-benchmarks.mjs",
+    "test": "node lib/test-all.mjs",
+    "prepublishOnly": "node doctor.mjs"
+  },
+  "keywords": [
+    "job-search",
+    "singapore",
+    "asean",
+    "career",
+    "automation",
+    "pmet",
+    "salary-benchmarks",
+    "tech-jobs",
+    "finance-jobs",
+    "green-economy",
+    "care-economy",
+    "manufacturing",
+    "life-sciences",
+    "digital-marketing",
+    "consulting",
+    "supply-chain",
+    "sustainability",
+    "esg"
+  ],
+  "author": "Bertram Yang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sg-job-hunter/sg-job-hunter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sg-job-hunter/sg-job-hunter/issues"
+  },
+  "homepage": "https://github.com/sg-job-hunter/sg-job-hunter#readme",
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "js-yaml": "^5.5.0",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

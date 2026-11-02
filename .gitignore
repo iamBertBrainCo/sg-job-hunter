@@ -1,0 +1,73 @@
+# Node modules
+node_modules/
+
+# Output files (generated, not committed)
+output/
+dashboard.html
+
+# Data files (personal, not committed)
+data/applications.md
+data/pipeline.md
+data/scan-history.tsv
+data/scan-runs.tsv
+data/follow-ups.md
+data/blacklist.md
+data/salary-observations.tsv
+data/assessments.tsv
+data/contacts.tsv
+data/Connections.csv
+data/status-log.tsv
+data/reply-candidates.json
+data/cache/
+data/.hired-share-state.json
+data/outcomes/
+data/templates/
+
+# Reports (personal evaluations)
+reports/
+
+# Job descriptions (personal captures)
+jds/
+
+# Interview prep (personal notes)
+interview-prep/
+
+# Batch logs
+batch/logs/
+batch/tracker-additions/
+batch/batch-logs/
+
+# Tracker additions (merged data)
+tracker-additions/
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Playwright browser cache
+.cache/
+playwright-cache/
+
+# PDF files (generated)
+*.pdf
+
+# Temporary files
+*.tmp
+*.temp
+
+# Internal dev notes (not for public repo)
+docs/internal/
+
+# Test artifacts (not committed)
+test-jobs/
+test-results/

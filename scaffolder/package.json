@@ -1,0 +1,39 @@
+{
+  "name": "@sg-job-hunter/scaffolder",
+  "version": "1.38.0",
+  "description": "One-command installer for SG Job Hunter — the AI-powered job search pipeline built for Singapore and ASEAN professionals.",
+  "bin": {
+    "sg-job-hunter": "bin/cli.mjs"
+  },
+  "type": "module",
+  "files": [
+    "bin/cli.mjs",
+    "bin/npm-command.mjs",
+    "bin/release-tag.mjs",
+    "bin/skill-entrypoints.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": "^22.13.0 || >=23.4.0"
+  },
+  "keywords": [
+    "sg-job-hunter",
+    "claude-code",
+    "job-search",
+    "scaffold",
+    "create",
+    "cli"
+  ],
+  "author": "Bertram Yang",
+  "homepage": "https://github.com/sg-job-hunter/sg-job-hunter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sg-job-hunter/sg-job-hunter.git",
+    "directory": "scaffolder"
+  },
+  "bugs": {
+    "url": "https://github.com/sg-job-hunter/sg-job-hunter/issues"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

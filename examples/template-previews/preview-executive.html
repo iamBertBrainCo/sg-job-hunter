@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Embedded in the gallery: show the CV itself, not the preview chrome.
+    if (window.self !== window.top) {
+      document.documentElement.classList.add('is-embedded');
+    }
+  </script>
+  <title>Template Preview: Executive</title>
+  <style>
+    html {
+      font-size: 112.5%; /* 18px at the browser default */
+    }
+    body {
+      background: #f6f5f1;
+      padding: 20px;
+      font-family: "Atkinson Hyperlegible", Verdana, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      overflow-wrap: break-word;
+    }
+    .preview-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #e2dfd6;
+      box-shadow: 0 8px 24px rgba(26, 28, 24, 0.07);
+      padding: 40px;
+    }
+    .preview-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 20px;
+      background: #1d3a55;
+      color: white;
+      border-radius: 8px;
+    }
+    .preview-header h2 {
+      margin: 0 0 6px 0;
+      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .preview-header p {
+      margin: 0;
+      font-family: "Atkinson Hyperlegible", Verdana, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 8px 0;
+      color: #1d3a55;
+      font-family: "Atkinson Hyperlegible", Verdana, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      white-space: normal;
+      overflow-wrap: break-word;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    html.is-embedded body {
+      padding: 0;
+      background: #ffffff;
+    }
+
+    html.is-embedded .preview-container {
+      max-width: none;
+      padding: 26px;
+      background: #ffffff;
+      border: 0;
+      box-shadow: none;
+    }
+
+    html.is-embedded .back-link,
+    html.is-embedded .preview-header {
+      display: none;
+    }
+
+    @media (max-width: 37.5em) {
+      .preview-container {
+        padding: 22px;
+      }
+
+      .preview-header {
+        padding: 16px;
+      }
+
+      .preview-header h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    <a href="#" id="back-link" class="back-link">← Back to Template Gallery</a>
+    <div class="preview-header">
+      <h2>Executive Template</h2>
+      <p>Preview with sample profile data</p>
+    </div>
+    <!DOCTYPE html>
+<!-- SG Job Hunter CV template
+name: Executive
+version: 1.0.0
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sarah Tan — CV</title>
+<style>
+  /* ── Executive ────────────────────────────────────────────────────────────
+     A conservative, serif, print-first CV for senior/executive applications
+     (banks, funds, traditional enterprises). No colour fills, no tags, no
+     gradients — hierarchy comes from a centred header, ruled small-caps section
+     headings, and generous leading.
+
+     ATS discipline is identical to templates/cv-template.html and is NOT
+     negotiable: a static system font stack (never the bundled variable woff2
+     fonts, whose glyph advances make PDF extractors inject spaces inside words)
+     and ligatures disabled (headless Chromium otherwise emits U+FB01/FB02 and a
+     literal keyword search for "verification" misses "veriﬁcation"). */
+
+  :root {
+    --accent-color: hsl(215 30% 26%);
+    --font-family: "Liberation Serif", Georgia, 'Times New Roman', 'DejaVu Serif', serif;
+    --font-size: 11px;
+    /* Must match generate-pdf.mjs's PDF_PAGE_MARGIN — the real @page margin is
+       appended later by injectPrintPageCss reading this same variable. */
+    --page-margin: 0.6in;
+    /* #3242: unchanged default — see templates/cv-template.html. */
+    --job-break-inside: auto;
+    /* Whether a Projects entry may split across a page break. Unchanged
+       default — a project may still split, keeping the CV compact. Override via
+       config/profile.yml `style.project_break_inside: avoid` for "a project is
+       one unit, never split", which removes the one-word widow a description
+       can leave above its tech line, at the cost of a bottom gap. */
+    --project-break-inside: auto;
+  }
+  @page { margin: var(--page-margin); }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0, "dlig" 0;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #ffffff;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0, "clig" 0, "dlig" 0;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    background: #ffffff;
+  }
+
+  /* === PHOTO (opt-in, #264) === */
+  .cv-photo {
+    float: right;
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    margin: 0 0 8px 14px;
+  }
+  .cv-photo.rounded { border-radius: 4px; }
+  .cv-photo.circle  { border-radius: 50%; }
+  .cv-photo.square  { border-radius: 0; }
+
+  /* === HEADER === */
+  .header {
+    text-align: center;
+    padding-bottom: 9px;
+    margin-bottom: 15px;
+    border-bottom: 1.5px solid var(--accent-color);
+  }
+
+  .header h1 {
+    font-size: 25px;
+    font-weight: 700;
+    /* 0.06em fragmented names in extracted PDF text. */
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    line-height: 1.15;
+  }
+
+  .header-title {
+    font-size: 13px;
+    font-weight: 600;
+    /* 0.14em was the widest tracking — guaranteed to fragment role titles. */
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 3px;
+    line-height: 1.2;
+  }
+
+  .contact-row {
+    margin-top: 6px;
+    font-size: 10px;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+
+  .contact-row a {
+    color: #3a3a3a;
+    text-decoration: none;
+  }
+
+  /* Generated on the item BEFORE it, so a wrap cannot start a line with the
+     separator. See cv-template.html for the full rationale. */
+  .contact-row > *:not(:last-child)::after {
+    /* Replaces the markup whitespace that sat before the old separator element;
+       without it every item after the first shifts left.
+       NO-BREAK space (U+00A0), not a plain one: a plain space here is a break
+       opportunity and Chromium takes it, leaving the bar alone at the start of
+       the next line -- the artifact this rule exists to prevent. Measured: with
+       a plain space, tests/cv-visual/contact-row-wrap.spec.mjs fails on
+       compact, executive, jake and modern in LTR. */
+    content: "\00a0|";
+    margin-inline: 6px;
+    color: #999;
+  }
+
+  /* === SECTIONS === */
+  .section { margin-bottom: 13px; }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Wide tracking splits section names in the PDF text layer. Fixed to 0. */
+    letter-spacing: 0;
+    color: var(--accent-color);
+    border-bottom: 0.75px solid #c4ccd6;
+    padding-bottom: 2px;
+    margin-bottom: 7px;
+  }
+
+  .summary-text { text-align: justify; }
+
+  /* === COMPETENCIES ===
+     Rendered as a ruled inline list rather than pills — pills read as
+     decorative on an executive CV. */
+  .competencies-grid { line-height: 1.7; }
+
+  .competency-tag {
+    display: inline;
+    white-space: nowrap;
+  }
+  .competency-tag::after {
+    content: "  \00B7  ";
+    color: #9aa4b0;
+  }
+  .competency-tag:last-child::after { content: ""; }
+
+  /* === WORK EXPERIENCE === */
+  .job { margin-bottom: 11px; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .job-company {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #14181f;
+  }
+
+  .job-period {
+    font-size: 10px;
+    color: #55606d;
+    white-space: nowrap;
+  }
+
+  .job-role {
+    font-size: 11.5px;
+    font-style: italic;
+    color: #2c3540;
+    margin-top: 1px;
+  }
+
+  .job-location {
+    font-size: 9.5px;
+    color: #6b7684;
+    margin-top: 1px;
+  }
+
+  .job-context {
+    font-style: italic;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #55606d;
+    margin-top: 3px;
+  }
+
+  .job ul {
+    margin-top: 4px;
+    padding-left: 17px;
+  }
+
+  .job li {
+    margin-bottom: 2.5px;
+    text-align: justify;
+  }
+
+  /* === PROJECTS === */
+  .project { margin-bottom: 7px; }
+
+  .project-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #14181f;
+  }
+
+  .project-badge {
+    font-size: 9px;
+    font-style: italic;
+    color: #55606d;
+    margin-left: 6px;
+  }
+
+  .project-desc { margin-top: 1px; text-align: justify; }
+
+  .project-tech {
+    font-size: 9.5px;
+    font-style: italic;
+    color: #55606d;
+    margin-top: 1px;
+  }
+
+  /* === EDUCATION === */
+  .edu-item { margin-bottom: 6px; }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .edu-title { font-weight: 700; color: #14181f; }
+
+  .edu-org { font-weight: 400; font-style: italic; color: #2c3540; }
+
+  .edu-year {
+    font-size: 10px;
+    color: #55606d;
+    white-space: nowrap;
+  }
+
+  .edu-location { font-size: 9.5px; color: #6b7684; margin-top: 1px; }
+
+  .edu-desc { margin-top: 1px; text-align: justify; }
+
+  /* === CERTIFICATIONS === */
+  .cert-table,
+  .award-table { display: block; }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2.5px;
+  }
+
+  .cert-title { font-weight: 700; }
+  .cert-org { flex: 1; font-style: italic; color: #2c3540; }
+  .cert-year { font-size: 10px; color: #55606d; white-space: nowrap; }
+
+  /* === SKILLS === */
+  .skills-grid { display: block; }
+
+  .skill-item {
+    margin-bottom: 2.5px;
+    padding-left: 0;
+  }
+
+  .skill-category {
+    font-weight: 700;
+    color: #14181f;
+  }
+
+  /* === GDPR / RODO CONSENT (footer) === */
+  /* Opt-in footer slot filled from payload.consent. Empty by default — the
+     :empty rule hides the div (and its border-top) when no consent text is
+     set, so existing CVs render byte-identical to a pre-consent layout.
+     Mirrors the  opt-in slot pattern (#264). */
+  .cv-consent {
+    margin-top: 14px;
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+    font-size: 8.5px;
+    line-height: 1.4;
+    color: #777;
+    text-align: left;
+  }
+  .cv-consent:empty { display: none; }
+
+  /* === PAGE BREAK CONTROL ===
+     Only small atomic units are protected; sections and multi-bullet roles flow
+     across a page boundary so content packs tight instead of leaving gaps. */
+  .header,
+  .edu-item,
+  .cert-item,
+  .competency-tag,
+  .skill-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* #3242: opt-in — see the --job-break-inside default above. */
+  .job {
+    page-break-inside: var(--job-break-inside, auto);
+    break-inside: var(--job-break-inside, auto);
+  }
+
+  /* Opt-in — see the --project-break-inside default above. */
+  .project {
+    page-break-inside: var(--project-break-inside, auto);
+    break-inside: var(--project-break-inside, auto);
+  }
+
+  .section-title,
+  .job-company,
+  .job-role,
+  .job-location,
+  .job-context,
+  .edu-location,
+  .project-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep a project's tech line attached to the description above it, so a bare
+     "Python | github.com/..." line is never stranded atop the next page. */
+  .project-tech {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  /* === RTL (Arabic) support === */
+  html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  }
+  html[lang="ar"] .job ul { padding-right: 17px; padding-left: 0; }
+  html[lang="ar"] .cv-photo { float: left; margin: 0 14px 8px 0; }
+  html[lang="ar"] .cert-year { text-align: left; }
+
+  /* === CJK fallback ===
+     The Latin serif stack stays first so ASCII keeps its serif face; the
+     browser's per-glyph fallback picks an installed CJK face for kana/kanji. */
+  html[lang="ja"] body {
+    font-family: "Liberation Serif", Georgia, 'Times New Roman', 'Hiragino Mincho ProN',
+      'Yu Mincho', 'Noto Serif CJK JP', 'MS PMincho', serif;
+  }
+  html[lang="zh-CN"] body,
+  html[lang="zh"] body {
+    font-family: "Liberation Serif", Georgia, 'Times New Roman', 'Songti SC',
+      'SimSun', 'Noto Serif CJK SC', serif;
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Sarah Tan</h1>
+    
+    <div class="contact-row">
+      <a href="tel:+65 8123 4567">+65 8123 4567</a>
+      <a href="mailto:sarah.tan@example.com">sarah.tan@example.com</a>
+      <a href=""></a>
+      <a href=""></a>
+      <span>Singapore</span>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title"></div>
+    <div class="summary-text"></div>
+  </div>
+
+  <!-- CORE COMPETENCIES -->
+  <div class="section">
+    <div class="section-title"></div>
+    <div class="competencies-grid">
+      
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title"></div>
+    
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Learning & Development Specialist</div>
+        <div class="job-company">DBS Bank — Singapore</div>
+        <div class="job-date">2022 – Present</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Design and deliver blended learning programmes for 500+ employees across retail and corporate banking</li>
+        <li>Develop digital learning modules and facilitation guides for new product launches</li>
+        <li>Achieved 4.8/5 average post-training satisfaction score across all programmes</li>
+        <li>Built internal trainer programme that certified 20 subject matter experts</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Training Coordinator → Training Executive</div>
+        <div class="job-company">NTUC Enterprise — Singapore</div>
+        <div class="job-date">2020 – 2022</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Coordinated training programmes for 1,000+ employees across retail and F&B divisions</li>
+        <li>Developed SOPs and training materials for new store openings</li>
+        <li>Promoted from coordinator to executive within 18 months based on performance</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Training Intern → Junior Training Executive</div>
+        <div class="job-company">Singtel — Singapore</div>
+        <div class="job-date">2018 – 2020</div>
+      </div>
+      <ul class="job-bullets">
+        <li>Supported delivery of leadership development programmes for 200+ managers</li>
+        <li>Created training materials and digital learning content</li>
+        <li>Conducted post-training evaluations and recommended improvements</li>
+      </ul>
+    </div>
+  
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title"></div>
+    
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title"></div>
+    
+    <div class="education-entry">
+      <div class="education-degree">Bachelor of Science in Human Resources Management</div>
+      <div class="education-school">Nanyang Technological University (NTU)</div>
+      <div class="education-date">2018</div>
+    </div>
+  
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title"></div>
+    <div class="cert-table"></div>
+  </div>
+
+  <!-- AWARDS -->
+  <div class="section">
+    <div class="section-title"></div>
+    <div class="award-table">Training Excellence Award 2023 — DBS Bank</div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title"></div>
+    
+    <div class="skills-category">
+      <div class="skills-label">Learning & Development</div>
+      <div class="skills-list">Blended learning design, curriculum development, training needs analysis, digital learning modules</div>
+    </div>
+    <div class="skills-category">
+      <div class="skills-label">Facilitation & Training</div>
+      <div class="skills-list">Workshop design, classroom delivery, virtual training, on-the-job training</div>
+    </div>
+    <div class="skills-category">
+      <div class="skills-label">Digital Tools</div>
+      <div class="skills-list">Learning management systems (LMS), Microsoft Teams, Zoom, Articulate Storyline, Canva</div>
+    </div>
+  
+  </div>
+
+  <!-- END -->
+
+  <!-- GDPR / RODO consent -->
+  <div class="cv-consent"></div>
+
+</div>
+</body>
+</html>
+
+  </div>
+  <script>
+    // Compute gallery path that works in both file:// and http:// contexts
+    (function() {
+      var href = window.location.href;
+      var dir = href.substring(0, href.lastIndexOf('/') + 1);
+      document.getElementById('back-link').href = dir + '../template-gallery.html';
+    })();
+  </script>
+</body>
+</html>
+  
