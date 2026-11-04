@@ -8,6 +8,7 @@ import { join } from 'path';
 import { ROOT, slugify, findApplication, htmlToText, parseArgs } from '../lib/flow/common.mjs';
 import { parseResumeMarkdown, renderResumeHtml, atsCheck, factCheck, availableTemplates } from '../lib/flow/resume-lib.mjs';
 import { jobKeywords } from '../lib/flow/keywords.mjs';
+import { parseStories } from '../lib/flow/stories.mjs';
 import { listTemplates, parseMeta } from '../lib/cv-templates.mjs';
 
 const sample = readFileSync(join(ROOT, 'examples', 'cv-format.md'), 'utf-8');
@@ -94,4 +95,19 @@ test('helpers', () => {
   assert.equal(findApplication(p, '9'), null);
   assert.equal(htmlToText('<p>A &amp; B</p><ul><li>one</li></ul>'), 'A & B\n- one');
   assert.deepEqual(parseArgs(['HR', 'manager', '--where', 'asean', '--limit=10']), { args: ['HR', 'manager'], opts: { where: 'asean', limit: '10' } });
+});
+
+test('fact check compares numbers with their units', () => {
+  const src = 'Redeployed 140 staff. Budget of $2,000. 2 warehouses.';
+  const doc = (b) => ({ experience: [{ role: 'r', company: '', bullets: [b] }], competencies: [], education: [], certifications: [], summary: '' });
+  assert.ok(factCheck(doc('Saved the company $2 million'), src).some((i) => /\$2m/.test(i.reason)));
+  assert.deepEqual(factCheck(doc('Redeployed 140 staff'), src), []);
+  assert.deepEqual(factCheck(doc('Redeployed 140 staff <!-- note 99 -->'.replace(/<!--.*-->/, '')), src + '<!-- 55 -->'), []);
+});
+
+test('story bank parses STAR stories', () => {
+  const s = parseStories('# Story bank\n\n## Cut attrition\n- Situation: A\n- Task: B\n- Action: C\n- Result: D\n- Good for: retention, data\n\n## Second\n- Action: E\n');
+  assert.equal(s.length, 2);
+  assert.deepEqual(s[0], { title: 'Cut attrition', situation: 'A', task: 'B', action: 'C', result: 'D', goodFor: ['retention', 'data'] });
+  assert.equal(s[1].result, '');
 });

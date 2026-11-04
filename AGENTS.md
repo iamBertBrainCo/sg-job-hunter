@@ -36,6 +36,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
    - Singapore norms: no photo, NRIC, age, date of birth, race, religion, marital status or salary on the resume. British spelling (organise, programme). Money in SGD.
 4. Run `npm run resume -- check`. Fix any FORMAT PROBLEMS it lists. If it shows FACT CHECK ⚠ lines, ask the user about each one and remove what they do not confirm.
 5. Tell the user in two or three lines what you found (for example: years of experience, strongest areas). Ask them to correct anything wrong.
+6. **Let them choose a resume design.** Run `npm run resume -- preview`. It opens a page showing their own resume in all 8 designs. Ask which number they like; recommend one the preview marks ATS-safe for online applications. Then `npm run resume -- use <number>`. Every resume after that uses this design.
 
 ### Step 3 — Find jobs
 
@@ -59,13 +60,20 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 4. If the FACT CHECK lists ⚠ lines, show them to the user and ask which are true. Remove the rest from `resume.md`, then run the command again. Never tell the user the resume is ready while ⚠ lines remain unconfirmed.
 5. Tell the user the ATS score, the ✗ items in plain words, and where the PDF is. Missing keywords are fine when the user does not have that skill — say so honestly.
 6. The user may edit `resume.md` themselves or ask you to. After any change, run `npm run resume -- <number>` again.
-   - Other designs: `npm run resume -- <number> --template <name>`; list them with `npm run resume -- templates`. Recommend `ats` (the default) for online applications.
+   - To change the design for every resume: `npm run resume -- preview`, then `npm run resume -- use <number>`. For one job only (for example a printed copy): `npm run resume -- <number> --template <name>`.
 
 ### Step 5 — Pipeline and applying
 
 1. Run `npm run pipeline`. It shows all saved jobs and opens a page in the browser with an **Apply** button and the resume PDF for each job.
 2. The user applies on the job site themselves, uploading the PDF.
 3. When they say they applied (or got an interview, offer or rejection): `npm run status -- <number> applied` (or `interview`, `offer`, `rejected`, `skipped`).
+
+### Step 6 — Interview preparation (when they get an interview, or ask for help preparing)
+
+1. **Story bank (once).** Run `npm run interview -- stories`. If there is no `story-bank.md`, it lists the user's strongest achievements and prints the format. Pick 5–8 with different themes. For each, ask the user one short question about what you do not know (the situation, or exactly what they did). Then write `story-bank.md` from their resume, career log and answers only. Save new facts they tell you to `career-log.md` in their words. Run `npm run interview -- stories` again and resolve any FACT CHECK ⚠ lines with the user.
+2. **Prep for one job.** Run `npm run interview -- <application number>`. It writes `interview-prep.md` in the job's folder: likely questions with the story to use, Singapore questions (expected salary with the posting's range and a market benchmark, notice period, work pass), and questions to ask the interviewer.
+3. Fill each "Answer outline" in that file with 2–3 short bullet points from the named story. Facts only.
+4. **Practice.** Offer a practice round: ask one question, wait for the answer, give short feedback (did they use Situation-Task-Action-Result? a real number? under 2 minutes?), then ask the next. Keep each reply short. Stop when they say stop.
 
 ### Clearing the user's data (end of session, shared computer, or "delete my data")
 
@@ -81,7 +89,9 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 | `career-log.md` | Extra history from the user |
 | `inbox/` | Where the user drops their files |
 | `data/jobs.md` | Last search results, with links |
-| `output/applications/<NN-company-role>/` | `job.md`, `resume.md` and the PDF for each saved job |
+| `output/applications/<NN-company-role>/` | `job.md`, `resume.md`, the PDF and `interview-prep.md` for each saved job |
+| `story-bank.md` | The user's STAR interview stories |
+| `output/resume-designs/index.html` | The design preview page |
 | `output/pipeline.html` | The pipeline page |
 | `sources.yml` | Job boards and career pages that are searched |
 

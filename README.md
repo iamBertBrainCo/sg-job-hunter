@@ -26,7 +26,9 @@ AI:   Your pipeline is open in the browser. Click Apply on each job and upload
 1. **Your details**: your resume (PDF, Word or text) plus a *career log* of anything not on it.
 2. **Find jobs**: MyCareersFuture, JobStreet and JobsDB, Kalibrr, Tech in Asia, and employer career pages (Agoda, Airwallex, Ninja Van, foodpanda and more), all searched in seconds. Results come with salary ranges where the employer gives them.
 3. **Tailored resumes**: for each job you pick, the AI rewrites your resume using only your real facts. Every resume gets an **ATS check** (keywords, action verbs, numbers, layout) and a **fact check** that flags anything not in your own material.
-4. **Pipeline**: one page with every saved job, its status, your resume PDF and an **Apply** button. You apply yourself; the AI never submits anything.
+4. **Your design**: see your own resume in all 8 designs side by side and pick one.
+5. **Pipeline**: one page with every saved job, its status, your resume PDF and an **Apply** button. You apply yourself; the AI never submits anything.
+6. **Interview prep**: a story bank of your STAR stories, a prep sheet per job (likely questions, which story to use, expected salary with a market benchmark, notice period, questions to ask), and practice rounds with feedback.
 
 ## Quick start
 
@@ -52,9 +54,10 @@ Then type what you are looking for, for example **"I want to find data analyst j
 | `npm run find-jobs -- "<role>" [--where asean\|MY\|ID\|PH\|TH\|VN]` | Searches all sources; Singapore by default |
 | `npm run save-job -- <number> [more]` | Saves jobs from the list, with full description and ATS keywords |
 | `npm run resume -- <number> [--template ats]` | Makes the tailored PDF, with ATS check and fact check |
-| `npm run resume -- templates` | Lists the 8 resume designs |
+| `npm run resume -- preview` / `use <number>` | Shows your resume in all 8 designs; saves your choice |
 | `npm run pipeline` | Shows saved jobs and opens the pipeline page |
 | `npm run status -- <number> applied` | Updates a job: `applied`, `interview`, `offer`, `rejected`, `skipped` |
+| `npm run interview -- stories` / `<number>` | Checks your story bank; makes the interview prep sheet for a job |
 | `npm run salary-benchmarks -- --role "<role>"` | Singapore salary ranges for a role or sector |
 | `npm run clear-my-data [-- --yes]` | Lists, then deletes, all your personal files |
 | `npm test` | Offline tests |
@@ -68,8 +71,9 @@ Everything stays on your computer. Your resume, career log, job lists and PDFs a
 | `inbox/` | Drop your resume and career log here |
 | `cv.md` | Your master resume (format: [examples/cv-format.md](examples/cv-format.md)) |
 | `career-log.md` | Extra history: achievements, projects, courses |
+| `story-bank.md` | Your STAR interview stories |
 | `data/jobs.md` | The latest search results, with links |
-| `output/applications/NN-company-role/` | `job.md`, your tailored `resume.md` and the PDF |
+| `output/applications/NN-company-role/` | `job.md`, your tailored `resume.md`, the PDF and `interview-prep.md` |
 | `output/pipeline.html` | Your pipeline page |
 | `sources.yml` | The job boards and career pages that are searched (copied from `sources.example.yml`) |
 
