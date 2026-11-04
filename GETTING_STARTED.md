@@ -38,7 +38,7 @@ The first time on each computer, connect the AI model: type `/connect`, choose *
 
 > I want to find marketing manager jobs
 
-The AI takes it from there: it installs what is missing, asks for your resume and career log, finds jobs, writes a tailored resume for each one you choose, and opens your pipeline page with Apply links. See [WALKTHROUGH.md](WALKTHROUGH.md) for the whole journey, and [TROUBLESHOOTING.md](TROUBLESHOOTING.md) if something goes wrong.
+The AI takes it from there: it installs what is missing, shows a short privacy notice (please read [PRIVACY.md](PRIVACY.md); the AI service reads what you share), asks for your resume and career log, finds jobs, writes a tailored resume for each one you choose, and opens your pipeline page with Apply links. See [WALKTHROUGH.md](WALKTHROUGH.md) for the whole journey, and [TROUBLESHOOTING.md](TROUBLESHOOTING.md) if something goes wrong.
 
 ## Clearing your data at the end
 

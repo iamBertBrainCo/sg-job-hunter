@@ -10,6 +10,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 - Every command ends with a `NEXT STEP:` line. Follow it, and use file paths exactly as the commands print them. All files are inside this project folder.
 - **Never invent facts.** Every job, date, number, qualification and skill on a resume must come from the user's resume, career log, or something they told you. If a number would help but you do not have it, ask the user.
 - Never submit an application, send an email, or sign in anywhere for the user. You prepare; they apply.
+- **Personal data.** Never put NRIC/FIN or passport numbers, date of birth, age, home address, race, religion, marital status, salary history or other people's contact details (such as referees) into any file. If the user pastes them, leave them out and tell them you did. Do not ask for them. If the user asks where their data goes, explain it plainly using PRIVACY.md.
 - Do not edit files under `lib/`, `ats/`, `sections/` or the `cv-template.*.html` files.
 - Use only the `npm run` commands in this file. Other scripts in the folder are developer tools; some ask questions in the terminal and would hang.
 - Salary questions ("what does a mid-level data analyst earn?"): `npm run salary-benchmarks -- --role "<role>"` or `npm run salary-benchmarks -- --sector <name> --level <junior|mid|senior>`. These are market benchmarks; the salary in a job posting wins.
@@ -20,7 +21,8 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 
 1. **Always run `npm run check` first**, even if you think everything is ready. It installs anything missing and tells you where the user is. If a line says FAIL, explain it simply and help fix it.
 2. Remember the role or industry they mentioned, but **do not search yet**.
-3. If `cv.md` does not exist yet, ask for these two things and wait for them before doing anything else:
+3. **Privacy first.** If `check` prints the privacy notice, show it to the user word for word and ask if that is OK. Only after they agree, run `npm run check -- --accept-privacy`. If they hesitate, answer their questions honestly (PRIVACY.md has the details) and do not push. Never ask for or read a resume before they have agreed.
+4. If `cv.md` does not exist yet, ask for these two things and wait for them before doing anything else:
    - their resume: they can drop the file into the `inbox` folder, paste its path, or paste the text;
    - their **career log**: anything not on the resume, such as achievements with numbers, projects, awards, courses, volunteer work, or what they want next. A file, a voice-note transcript or rough notes in the chat are all fine.
 

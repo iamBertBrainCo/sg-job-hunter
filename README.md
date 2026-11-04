@@ -62,6 +62,10 @@ Then type what you are looking for, for example **"I want to find data analyst j
 | `npm run clear-my-data [-- --yes]` | Lists, then deletes, all your personal files |
 | `npm test` | Offline tests |
 
+## Privacy
+
+Your files stay on your computer. But **the AI has to read your resume to help you**, and anything it reads or you type in the chat is sent to the AI provider you connect in opencode. With the default set-up that is AI Singapore's SEA-LION service, whose terms allow it to use what you send to improve its service. Before you share your resume, the agent shows a short notice and asks you to agree. When you import a resume file, NRIC/FIN numbers, dates of birth, home addresses and referees' details are removed before the AI sees it. Read [PRIVACY.md](PRIVACY.md) for what to leave out, other options (such as running a model on your own computer) and how to delete everything.
+
 ## Your files
 
 Everything stays on your computer. Your resume, career log, job lists and PDFs are listed in `.gitignore`, so git never uploads them.

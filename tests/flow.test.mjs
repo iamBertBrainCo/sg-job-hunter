@@ -9,6 +9,7 @@ import { ROOT, slugify, findApplication, htmlToText, parseArgs } from '../lib/fl
 import { parseResumeMarkdown, renderResumeHtml, atsCheck, factCheck, availableTemplates } from '../lib/flow/resume-lib.mjs';
 import { jobKeywords } from '../lib/flow/keywords.mjs';
 import { parseStories } from '../lib/flow/stories.mjs';
+import { scrubSensitive } from '../lib/flow/privacy.mjs';
 import { listTemplates, parseMeta } from '../lib/cv-templates.mjs';
 
 const sample = readFileSync(join(ROOT, 'examples', 'cv-format.md'), 'utf-8');
@@ -110,4 +111,13 @@ test('story bank parses STAR stories', () => {
   assert.equal(s.length, 2);
   assert.deepEqual(s[0], { title: 'Cut attrition', situation: 'A', task: 'B', action: 'C', result: 'D', goodFor: ['retention', 'data'] });
   assert.equal(s[1].result, '');
+});
+
+test('NRIC/FIN, birth date, address and referees are removed before the AI sees them', () => {
+  const r = scrubSensitive('Tan Mei Ling\nNRIC: S1234567D | Date of Birth: 1 Jan 1990 | Blk 123 Ang Mo Kio Ave 3, Singapore 560123 | +65 9123 4567 | mei@example.com\nFIN G7654321K\n\n## Referees\n- John Lim, +65 9876 5432\n- Mary Ong, mary@example.com\n\n## Skills\n- Excel\nMarital status: Married');
+  assert.deepEqual(r.removed, { nric: 2, dob: 1, address: 1, referees: 1 });
+  for (const gone of ['S1234567D', 'G7654321K', '1 Jan 1990', 'Ang Mo Kio', '560123', 'John Lim', '9876', 'mary@example.com']) assert.ok(!r.text.includes(gone), gone);
+  for (const kept of ['+65 9123 4567', 'mei@example.com', 'References available on request', '## Skills', '- Excel']) assert.ok(r.text.includes(kept), kept);
+  assert.deepEqual(r.found, ['marital status']);
+  assert.deepEqual(scrubSensitive('Led a single source of truth for HR data across 6 sites').found, []);
 });
