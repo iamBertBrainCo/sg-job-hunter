@@ -1,4 +1,4 @@
-# Portal scanner configuration for `npm run scan` (the advanced scanner).
+# Portal scanner configuration for the advanced scanner: node lib/scan.mjs
 #
 # For the guided flow you do not need this file: `npm run find-jobs` uses
 # sources.yml instead. Use this when you want the full scanner with

@@ -55,6 +55,7 @@ Then type what you are looking for, for example **"I want to find data analyst j
 | `npm run resume -- templates` | Lists the 8 resume designs |
 | `npm run pipeline` | Shows saved jobs and opens the pipeline page |
 | `npm run status -- <number> applied` | Updates a job: `applied`, `interview`, `offer`, `rejected`, `skipped` |
+| `npm run salary-benchmarks -- --role "<role>"` | Singapore salary ranges for a role or sector |
 | `npm test` | Offline tests |
 
 ## Your files
@@ -98,9 +99,13 @@ All PMET sectors. Salary benchmarks for reference are in [data/salary-benchmarks
 | L&D / OD | L&D Manager, OD Manager, Training Manager | $6,000 – $8,000 |
 | Government | Policy Analyst, Programme Manager | $6,000 – $13,000 |
 
-## Advanced tools
+## Salary benchmarks
 
-The guided flow above is all most people need. The older command-line tools are still here for power users: `npm run scan` (full scanner with history, using `portals.yml`), `evaluate` (6-block job scoring), `followup`, `stats`, `analyze`, `upskill`, `salary-gap` and `salary-benchmarks`. See [GETTING_STARTED.md](GETTING_STARTED.md).
+`npm run salary-benchmarks -- --role "HR business partner"` (or `--sector finance --level mid`) shows 2026 monthly base-salary ranges for Singapore. Ask the AI things like "what does a mid-level data analyst earn?".
+
+## For developers
+
+The guided commands live in `lib/flow/`; job-board connectors are in `lib/providers/`. The earlier command-line tools from v2.0 (scanner, 6-block evaluator, tracker scripts) are still in `lib/` but are not part of the supported flow. For example, `node lib/scan.mjs` with a `portals.yml` copied from `portals.example.yml`.
 
 ## Contributing
 

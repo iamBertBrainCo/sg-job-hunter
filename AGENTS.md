@@ -11,6 +11,8 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 - **Never invent facts.** Every job, date, number, qualification and skill on a resume must come from the user's resume, career log, or something they told you. If a number would help but you do not have it, ask the user.
 - Never submit an application, send an email, or sign in anywhere for the user. You prepare; they apply.
 - Do not edit files under `lib/`, `ats/`, `sections/` or the `cv-template.*.html` files.
+- Use only the `npm run` commands in this file. Other scripts in the folder are developer tools; some ask questions in the terminal and would hang.
+- Salary questions ("what does a mid-level data analyst earn?"): `npm run salary-benchmarks -- --role "<role>"` or `npm run salary-benchmarks -- --sector <name> --level <junior|mid|senior>`. These are market benchmarks; the salary in a job posting wins.
 
 ## The flow
 
