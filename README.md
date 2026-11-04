@@ -56,6 +56,7 @@ Then type what you are looking for, for example **"I want to find data analyst j
 | `npm run pipeline` | Shows saved jobs and opens the pipeline page |
 | `npm run status -- <number> applied` | Updates a job: `applied`, `interview`, `offer`, `rejected`, `skipped` |
 | `npm run salary-benchmarks -- --role "<role>"` | Singapore salary ranges for a role or sector |
+| `npm run clear-my-data [-- --yes]` | Lists, then deletes, all your personal files |
 | `npm test` | Offline tests |
 
 ## Your files

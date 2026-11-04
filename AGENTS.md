@@ -18,9 +18,9 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 
 ### Step 1 — Start (when the user says something like "I want to find HR jobs")
 
-1. Run `npm run check`. It installs anything missing. If a line says FAIL, explain it simply and help fix it.
-2. Remember the role or industry they mentioned.
-3. If `cv.md` does not exist yet, ask for:
+1. **Always run `npm run check` first**, even if you think everything is ready. It installs anything missing and tells you where the user is. If a line says FAIL, explain it simply and help fix it.
+2. Remember the role or industry they mentioned, but **do not search yet**.
+3. If `cv.md` does not exist yet, ask for these two things and wait for them before doing anything else:
    - their resume: they can drop the file into the `inbox` folder, paste its path, or paste the text;
    - their **career log**: anything not on the resume, such as achievements with numbers, projects, awards, courses, volunteer work, or what they want next. A file, a voice-note transcript or rough notes in the chat are all fine.
 
@@ -66,6 +66,12 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 1. Run `npm run pipeline`. It shows all saved jobs and opens a page in the browser with an **Apply** button and the resume PDF for each job.
 2. The user applies on the job site themselves, uploading the PDF.
 3. When they say they applied (or got an interview, offer or rejection): `npm run status -- <number> applied` (or `interview`, `offer`, `rejected`, `skipped`).
+
+### Clearing the user's data (end of session, shared computer, or "delete my data")
+
+1. Run `npm run clear-my-data`. It lists what would be deleted.
+2. Ask the user to confirm. Only after they say yes: `npm run clear-my-data -- --yes`.
+3. Tell them the two things it cannot remove: this chat (delete it from the session list) and the saved API key (`opencode auth logout sealion`, only needed on a shared computer).
 
 ## Files
 
