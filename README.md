@@ -124,6 +124,8 @@ Contributions welcome: Singapore and ASEAN employers for `sources.example.yml`, 
 
 **Project creator:** [Bertram Yang](https://linkedin.com/in/bertramyang)
 
+**Based on:** [career-ops](https://github.com/career-ops-hq/career-ops) by Santiago Fernández de Valderrama (MIT License). SG Job Hunter is an independent project and is not affiliated with or endorsed by career-ops.
+
 **Salary data sources:** Hays Asia, Robert Walters, Michael Page, Robert Half, Skillta.tech, Fuku AI, JTE Recruit, Mavenside, Nodeflair/Vulcanpost, Skillup.sg, Glassdoor SG, Vertical Institute, MOM COMPASS, Reeracoen, Corestaff, Morgan McKinley, Atomic Group, NCSS/MOH.
 
 Job data comes from public job-board and career-page feeds. Always check the original posting before you apply.
