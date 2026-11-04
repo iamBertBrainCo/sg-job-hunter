@@ -71,3 +71,17 @@ docs/internal/
 # Test artifacts (not committed)
 test-jobs/
 test-results/
+
+# ── Personal files from the guided flow (never upload these) ──
+cv.md
+career-log.md
+config/profile.yml
+modes/_profile.md
+portals.yml
+sources.yml
+inbox/*
+!inbox/README.md
+data/jobs.json
+data/jobs.md
+data/pipeline.json
+data/resume-original.txt

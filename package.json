@@ -1,10 +1,17 @@
 {
   "name": "sg-job-hunter",
   "version": "2.0.0",
-  "description": "Automated job search system for Singapore and ASEAN PMET professionals — all industries",
+  "description": "Singapore-first job search for PMETs, run by an AI agent in opencode: find SG/ASEAN jobs, tailor ATS-safe resumes, track applications",
   "main": "lib/index.mjs",
   "type": "module",
   "scripts": {
+    "check": "node lib/flow/check.mjs",
+    "import-resume": "node lib/flow/import-resume.mjs",
+    "find-jobs": "node lib/flow/find-jobs.mjs",
+    "save-job": "node lib/flow/save-job.mjs",
+    "resume": "node lib/flow/resume.mjs",
+    "pipeline": "node lib/flow/pipeline.mjs",
+    "status": "node lib/flow/status.mjs",
     "setup": "node setup.mjs",
     "onboard": "node onboard.mjs",
     "doctor": "node doctor.mjs",
@@ -27,8 +34,9 @@
     "upskill": "node lib/upskill.mjs",
     "salary-gap": "node lib/salary-gap.mjs",
     "salary-benchmarks": "node lib/salary-benchmarks.mjs",
-    "test": "node lib/test-all.mjs",
-    "prepublishOnly": "node doctor.mjs"
+    "test": "node --test tests/flow.test.mjs",
+    "prepublishOnly": "node doctor.mjs",
+    "test:legacy": "node lib/test-all.mjs"
   },
   "keywords": [
     "job-search",
@@ -54,17 +62,19 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sg-job-hunter/sg-job-hunter.git"
+    "url": "https://github.com/iamBertBrainCo/sg-job-hunter.git"
   },
   "bugs": {
-    "url": "https://github.com/sg-job-hunter/sg-job-hunter/issues"
+    "url": "https://github.com/iamBertBrainCo/sg-job-hunter/issues"
   },
-  "homepage": "https://github.com/sg-job-hunter/sg-job-hunter#readme",
+  "homepage": "https://github.com/iamBertBrainCo/sg-job-hunter#readme",
   "dependencies": {
     "dotenv": "^18.0.9",
     "js-yaml": "^5.5.0",
+    "mammoth": "1.13.0",
     "node-fetch": "^3.3.2",
-    "playwright": "^1.40.0"
+    "playwright": "^1.40.0",
+    "unpdf": "1.8.1"
   },
   "engines": {
     "node": ">=22.13.0"

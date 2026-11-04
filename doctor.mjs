@@ -1397,8 +1397,7 @@ async function main() {
       console.log(`Result: All checks passed${warnNote}. You're ready to go! Open your AI CLI in this folder (${CLI_NAMES}) to start.`);
     }
     console.log('');
-    console.log('Join the community: https://discord.gg/8pRpHETxa4');
-    console.log('Read the manifesto: `npm run manifesto` — a new way of job searching is taking shape, and you are now part of it.');
+    console.log('Guided flow: open opencode in this folder and say "I want to find <role> jobs" (or run npm run check).');
     process.exit(0);
   }
 }
