@@ -15,7 +15,7 @@ This document describes how SG Job Hunter works when run through OpenCode (or an
 | User types `npm install` | AI agent installs dependencies |
 | User types `node scan.mjs` | AI agent runs scanner |
 | User types `node evaluate.mjs` | AI agent evaluates jobs |
-| User types `node generate-pdf.mjs` | AI agent generates PDFs |
+| User types `npm run convert-cv` | AI agent generates PDFs |
 | User reads terminal output | User sees results in chat |
 | User opens files manually | AI agent shows files in Review pane |
 
@@ -179,8 +179,7 @@ await shell('node reserve-report-num.mjs --count 5');
 // Run evaluation for each job (AI model call)
 
 // Application Generation
-await shell('node generate-pdf.mjs');
-await shell('node convert-cv-to-pdf.mjs');
+await shell('npm run convert-cv');
 await shell('node convert-cover-letter-to-pdf.mjs');
 
 // Tracking

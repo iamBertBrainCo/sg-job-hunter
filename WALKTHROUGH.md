@@ -173,16 +173,14 @@ For jobs scored 4.0+:
 
 ### 5.1 Generate Tailored CV
 
+Ask your AI agent to write a tailored copy of your `cv.md` for the job (for example `output/cv-<role>.md`), emphasising the experience that matches the job description. Then convert it to PDF:
+
 ```bash
-# Generate tailored CV for the job
-node generate-pdf.mjs
+npm run convert-cv
 ```
 
-The system will:
-- Read your `cv.md`
-- Match your experience to the job description
-- Generate a tailored CV emphasising relevant experience
-- Convert to PDF
+`npm run convert-cv` runs `convert-cv-to-pdf.mjs`, which converts every CV listed in its `cvFiles` array. Add one entry per tailored CV first, e.g.
+`{ md: 'output/cv-<role>.md', pdf: 'output/cv-<name>-<role>.pdf', title: '<Name> — <Role Title>' }`.
 
 ### 5.2 Generate Cover Letter
 
