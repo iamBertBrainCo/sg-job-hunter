@@ -38,6 +38,8 @@ The agent runs `npm run check`. That command installs the packages and the Chrom
 
 The agent turns these into `cv.md`, your master resume, and checks it with `npm run resume -- check`. Read its summary and correct anything wrong.
 
+Then a page opens showing **your resume in all 8 designs**. Each one is marked "ATS-safe" (best for online applications) or "design only" (for emailing or printing). Tell the agent the number you like, for example **"I'll take 3"**, and every resume will use it.
+
 ## Step 4: Find jobs (2 minutes)
 
 The agent runs `npm run find-jobs -- "supply chain manager"` and shows a numbered table:
@@ -71,6 +73,18 @@ Say **"show my pipeline"**. The agent runs `npm run pipeline` and a page opens i
 - **Open resume PDF** and **Open folder** for your files.
 
 Tell the agent **"I applied to 1"**, and it marks the job as applied (`npm run status -- 1 applied`).
+
+## Step 7: Prepare for the interview (15 minutes)
+
+Got an interview? Say **"I got an interview for 1, help me prepare"**.
+
+1. **Story bank (once).** The agent picks 5–8 of your achievements and asks you a short question about each. It then writes them as STAR stories (Situation, Task, Action, Result) in `story-bank.md`. As with resumes, anything you did not tell it is flagged for you to confirm.
+2. **Prep sheet for the job.** `interview-prep.md` in that job's folder has:
+   - likely questions for this role, each with the story to use;
+   - Singapore questions: expected salary (the posting's range plus a market benchmark), notice period, work pass;
+   - good questions to ask the interviewer.
+   It also appears as an **Interview prep** button on your pipeline page.
+3. **Practice.** Say **"practise with me"**. The agent asks one question at a time and gives short feedback on each answer.
 
 ---
 

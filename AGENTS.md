@@ -10,6 +10,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 - Every command ends with a `NEXT STEP:` line. Follow it, and use file paths exactly as the commands print them. All files are inside this project folder.
 - **Never invent facts.** Every job, date, number, qualification and skill on a resume must come from the user's resume, career log, or something they told you. If a number would help but you do not have it, ask the user.
 - Never submit an application, send an email, or sign in anywhere for the user. You prepare; they apply.
+- **Personal data.** Never put NRIC/FIN or passport numbers, date of birth, age, home address, race, religion, marital status, salary history or other people's contact details (such as referees) into any file. If the user pastes them, leave them out and tell them you did. Do not ask for them. If the user asks where their data goes, explain it plainly using PRIVACY.md.
 - Do not edit files under `lib/`, `ats/`, `sections/` or the `cv-template.*.html` files.
 - Use only the `npm run` commands in this file. Other scripts in the folder are developer tools; some ask questions in the terminal and would hang.
 - Salary questions ("what does a mid-level data analyst earn?"): `npm run salary-benchmarks -- --role "<role>"` or `npm run salary-benchmarks -- --sector <name> --level <junior|mid|senior>`. These are market benchmarks; the salary in a job posting wins.
@@ -18,9 +19,10 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 
 ### Step 1 — Start (when the user says something like "I want to find HR jobs")
 
-1. Run `npm run check`. It installs anything missing. If a line says FAIL, explain it simply and help fix it.
-2. Remember the role or industry they mentioned.
-3. If `cv.md` does not exist yet, ask for:
+1. **Always run `npm run check` first**, even if you think everything is ready. It installs anything missing and tells you where the user is. If a line says FAIL, explain it simply and help fix it.
+2. Remember the role or industry they mentioned, but **do not search yet**.
+3. **Privacy first.** If `check` prints the privacy notice, show it to the user word for word and ask if that is OK. Only after they agree, run `npm run check -- --accept-privacy`. If they hesitate, answer their questions honestly (PRIVACY.md has the details) and do not push. Never ask for or read a resume before they have agreed.
+4. If `cv.md` does not exist yet, ask for these two things and wait for them before doing anything else:
    - their resume: they can drop the file into the `inbox` folder, paste its path, or paste the text;
    - their **career log**: anything not on the resume, such as achievements with numbers, projects, awards, courses, volunteer work, or what they want next. A file, a voice-note transcript or rough notes in the chat are all fine.
 
@@ -36,6 +38,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
    - Singapore norms: no photo, NRIC, age, date of birth, race, religion, marital status or salary on the resume. British spelling (organise, programme). Money in SGD.
 4. Run `npm run resume -- check`. Fix any FORMAT PROBLEMS it lists. If it shows FACT CHECK ⚠ lines, ask the user about each one and remove what they do not confirm.
 5. Tell the user in two or three lines what you found (for example: years of experience, strongest areas). Ask them to correct anything wrong.
+6. **Let them choose a resume design.** Run `npm run resume -- preview`. It opens a page showing their own resume in all 8 designs. Ask which number they like; recommend one the preview marks ATS-safe for online applications. Then `npm run resume -- use <number>`. Every resume after that uses this design.
 
 ### Step 3 — Find jobs
 
@@ -59,13 +62,26 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 4. If the FACT CHECK lists ⚠ lines, show them to the user and ask which are true. Remove the rest from `resume.md`, then run the command again. Never tell the user the resume is ready while ⚠ lines remain unconfirmed.
 5. Tell the user the ATS score, the ✗ items in plain words, and where the PDF is. Missing keywords are fine when the user does not have that skill — say so honestly.
 6. The user may edit `resume.md` themselves or ask you to. After any change, run `npm run resume -- <number>` again.
-   - Other designs: `npm run resume -- <number> --template <name>`; list them with `npm run resume -- templates`. Recommend `ats` (the default) for online applications.
+   - To change the design for every resume: `npm run resume -- preview`, then `npm run resume -- use <number>`. For one job only (for example a printed copy): `npm run resume -- <number> --template <name>`.
 
 ### Step 5 — Pipeline and applying
 
 1. Run `npm run pipeline`. It shows all saved jobs and opens a page in the browser with an **Apply** button and the resume PDF for each job.
 2. The user applies on the job site themselves, uploading the PDF.
 3. When they say they applied (or got an interview, offer or rejection): `npm run status -- <number> applied` (or `interview`, `offer`, `rejected`, `skipped`).
+
+### Step 6 — Interview preparation (when they get an interview, or ask for help preparing)
+
+1. **Story bank (once).** Run `npm run interview -- stories`. If there is no `story-bank.md`, it lists the user's strongest achievements and prints the format. Pick 5–8 with different themes. For each, ask the user one short question about what you do not know (the situation, or exactly what they did). Then write `story-bank.md` from their resume, career log and answers only. Save new facts they tell you to `career-log.md` in their words. Run `npm run interview -- stories` again and resolve any FACT CHECK ⚠ lines with the user.
+2. **Prep for one job.** Run `npm run interview -- <application number>`. It writes `interview-prep.md` in the job's folder: likely questions with the story to use, Singapore questions (expected salary with the posting's range and a market benchmark, notice period, work pass), and questions to ask the interviewer.
+3. Fill each "Answer outline" in that file with 2–3 short bullet points from the named story. Facts only.
+4. **Practice.** Offer a practice round: ask one question, wait for the answer, give short feedback (did they use Situation-Task-Action-Result? a real number? under 2 minutes?), then ask the next. Keep each reply short. Stop when they say stop.
+
+### Clearing the user's data (end of session, shared computer, or "delete my data")
+
+1. Run `npm run clear-my-data`. It lists what would be deleted.
+2. Ask the user to confirm. Only after they say yes: `npm run clear-my-data -- --yes`.
+3. Tell them the two things it cannot remove: this chat (delete it from the session list) and the saved API key (`opencode auth logout sealion`, only needed on a shared computer).
 
 ## Files
 
@@ -75,7 +91,9 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 | `career-log.md` | Extra history from the user |
 | `inbox/` | Where the user drops their files |
 | `data/jobs.md` | Last search results, with links |
-| `output/applications/<NN-company-role>/` | `job.md`, `resume.md` and the PDF for each saved job |
+| `output/applications/<NN-company-role>/` | `job.md`, `resume.md`, the PDF and `interview-prep.md` for each saved job |
+| `story-bank.md` | The user's STAR interview stories |
+| `output/resume-designs/index.html` | The design preview page |
 | `output/pipeline.html` | The pipeline page |
 | `sources.yml` | Job boards and career pages that are searched |
 

@@ -11,9 +11,11 @@
     "find-jobs": "node lib/flow/find-jobs.mjs",
     "save-job": "node lib/flow/save-job.mjs",
     "resume": "node lib/flow/resume.mjs",
+    "interview": "node lib/flow/interview.mjs",
     "pipeline": "node lib/flow/pipeline.mjs",
     "status": "node lib/flow/status.mjs",
     "salary-benchmarks": "node lib/salary-benchmarks.mjs",
+    "clear-my-data": "node lib/flow/clear-my-data.mjs",
     "test": "node --test tests/flow.test.mjs"
   },
   "keywords": [
