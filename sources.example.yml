@@ -1,0 +1,66 @@
+# Where `npm run find-jobs` looks for jobs.
+# `npm run check` copies this file to sources.yml — edit sources.yml, not this one.
+#
+# To switch a source off, change `enabled: true` to `enabled: false`.
+# To add an employer, copy one line under career_pages and change the name and link.
+
+job_boards:
+  # Singapore
+  - name: MyCareersFuture
+    type: mycareersfuture        # Singapore's national job bank (WSG). Shows salary ranges.
+    country: SG
+    enabled: true
+  - name: JobStreet Singapore
+    type: jobstreet
+    site: sg.jobstreet.com
+    country: SG
+    enabled: true
+
+  # ASEAN (searched when you add --where asean, or a country such as --where MY)
+  - name: JobStreet Malaysia
+    type: jobstreet
+    site: my.jobstreet.com
+    country: MY
+    enabled: true
+  - name: JobStreet Indonesia
+    type: jobstreet
+    site: id.jobstreet.com
+    country: ID
+    enabled: true
+  - name: JobStreet Philippines
+    type: jobstreet
+    site: ph.jobstreet.com
+    country: PH
+    enabled: true
+  - name: JobsDB Thailand
+    type: jobstreet
+    site: th.jobsdb.com
+    country: TH
+    enabled: true
+  - name: Kalibrr
+    type: kalibrr                # Philippines and Indonesia
+    enabled: true
+  - name: Tech in Asia Jobs
+    type: techinasia             # Southeast Asian startups
+    enabled: true
+
+# Employer career pages with Singapore or ASEAN openings (checked November 2026).
+# Only pages on Greenhouse, Lever, Ashby or SmartRecruiters can be searched.
+career_pages:
+  - { name: Agoda, url: "https://job-boards.greenhouse.io/agoda", enabled: true }
+  - { name: Airwallex, url: "https://jobs.ashbyhq.com/airwallex", enabled: true }
+  - { name: Ninja Van, url: "https://jobs.lever.co/ninjavan", enabled: true }
+  - { name: OKX, url: "https://job-boards.greenhouse.io/okx", enabled: true }
+  - { name: foodpanda (Delivery Hero), url: "https://careers.smartrecruiters.com/DeliveryHero", enabled: true }
+  - { name: Stripe, url: "https://job-boards.greenhouse.io/stripe", enabled: true }
+  - { name: Coinbase, url: "https://job-boards.greenhouse.io/coinbase", enabled: true }
+  - { name: Databricks, url: "https://job-boards.greenhouse.io/databricks", enabled: true }
+  - { name: Datadog, url: "https://job-boards.greenhouse.io/datadog", enabled: true }
+  - { name: ServiceNow, url: "https://careers.smartrecruiters.com/ServiceNow", enabled: true }
+  - { name: MongoDB, url: "https://job-boards.greenhouse.io/mongodb", enabled: true }
+  - { name: Thunes, url: "https://job-boards.greenhouse.io/thunes", enabled: true }
+  - { name: GitLab, url: "https://job-boards.greenhouse.io/gitlab", enabled: true }
+  - { name: Okta, url: "https://job-boards.greenhouse.io/okta", enabled: true }
+  - { name: Nium, url: "https://jobs.lever.co/nium", enabled: true }
+  - { name: Twilio, url: "https://job-boards.greenhouse.io/twilio", enabled: true }
+  - { name: ElevenLabs, url: "https://jobs.ashbyhq.com/elevenlabs", enabled: true }

@@ -1,5 +1,14 @@
 # Changelog — SG Job Hunter
 
+## v2.1.0 (November 2026) — Guided flow for opencode
+
+- **Talk to an AI agent instead of running tools.** Open opencode in the folder and say "I want to find <role> jobs". The agent follows `AGENTS.md`.
+- **New commands:** `check`, `import-resume` (PDF / Word / text), `find-jobs` (MyCareersFuture, JobStreet/JobsDB in SG, MY, ID, PH, TH, Kalibrr, Tech in Asia and employer career pages), `save-job`, `resume` (8 templates, ATS check, fact check), `pipeline` (page with Apply links) and `status`.
+- **Fact check:** every tailored resume is compared with your own resume and career log, and anything new is flagged for you to confirm.
+- **Fixed:** template metadata no longer shows at the top of resumes; the ATS template is listed; docs no longer point to missing scripts.
+- **Removed:** the US-only H-1B sponsor plugin, career-ops leftovers, the old interactive `setup` / `onboard` commands, and commands that crashed or read the old tracker (`scan`, `evaluate`, `scrape`, `set-status`, `analyze`, `upskill` and others are no longer npm commands). `npm run doctor` now runs `npm run check`.
+- **Privacy:** your resume, career log, job lists and `inbox/` are excluded from git.
+
 ## v2.0.0 (November 2026) — Major Release
 
 ### 🎉 What's New

@@ -18,12 +18,11 @@ Thank you for interested in contributing! 🇸🇬
 git clone https://github.com/YOUR_USERNAME/sg-job-hunter.git
 cd sg-job-hunter
 
-# Install
-npm install
-npx playwright install chromium
+# Install everything (packages and the Chromium used for PDFs)
+npm run check
 
-# Test
-npm run doctor
+# Run the offline tests
+npm test
 ```
 
 ---
