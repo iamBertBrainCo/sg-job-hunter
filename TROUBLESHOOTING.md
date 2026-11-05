@@ -14,13 +14,13 @@ npm run check
 | `Node.js … is too old` | Install Node.js 22 LTS or newer from https://nodejs.org. |
 | `npm install failed` | Check your internet connection and run `npm run check` again. On office laptops, a company proxy may block downloads; try another network. |
 | `Chromium install failed` | Run `npx playwright install chromium`. Without it, PDFs cannot be made, but job search still works. |
-| opencode asks for a model or says "no provider" | In opencode type `/connect`, choose **Other**, enter `sealion`, paste your API key. Then `/models` and pick Qwen SEA-LION. |
+| opencode asks for a model or says "no provider" | In opencode type `/models` and pick a model marked **Free**. See [PRIVACY.md](PRIVACY.md) for which free models are best for resumes. |
 
 ## While using it
 
 | What you see | What to do |
 |---|---|
-| "Rate limit", "429" or the AI pauses | The model allows about 10 requests a minute. Wait a minute and type **continue**. |
+| "Rate limit", "usage limit", "429" or the AI pauses | Free models have usage limits. Wait a minute and type **continue**. If a free model stops working, pick another free one with `/models`. |
 | opencode asks permission to access a folder outside the project | Choose **reject**. Everything it needs is inside the `sg-job-hunter` folder. Then type **continue**. |
 | "No resume found" | Put your resume in the `inbox` folder (PDF or Word), or paste the text into the chat. |
 | "almost no text — probably a scanned image" | Your PDF is a picture. Use the Word version, or paste the text. |

@@ -21,7 +21,7 @@ From a fresh laptop to a tailored, ATS-checked resume and an Apply link in about
    opencode
    ```
 
-3. In opencode, type `/connect`, choose **Other**, enter `sealion` as the provider id, and paste your API key. The provider settings are already in `opencode.json`.
+3. In opencode, type `/models` and choose a model marked **Free**. No account or API key is needed. For your resume, pick one whose provider keeps no data (see [PRIVACY.md](PRIVACY.md)).
 
 ## Step 2: Tell the agent what you want (2 minutes)
 
@@ -91,5 +91,5 @@ Got an interview? Say **"I got an interview for 1, help me prepare"**.
 ## Tips
 
 - One job at a time works best: save, tailor, check, apply.
-- If the agent pauses with a rate-limit message, wait a minute and say "continue".
+- Free models have usage limits. If the agent pauses with a limit message, wait a minute and say "continue", or switch to another free model with `/models`.
 - Your files never leave your computer; git ignores them (see `.gitignore`).
