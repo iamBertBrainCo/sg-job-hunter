@@ -32,7 +32,7 @@ opencode
 
 or in the **opencode desktop app**: open the `sg-job-hunter` folder as your project. It must be this exact folder; any other folder, including an older copy, will not have the instructions.
 
-The first time on each computer, connect the AI model: type `/connect`, choose **Other**, enter `sealion`, and paste your API key. The key is saved, so you do not need to do this again next time. Then choose the model **Qwen SEA-LION v4.5 27B IT** under **SEA-LION (AI Singapore)**.
+Then choose an AI model: type `/models` and pick one marked **Free**. No account or API key is needed. Because you will share your resume, pick a free model whose provider keeps no data and does not train on it, and avoid any that say not to submit personal data. [PRIVACY.md](PRIVACY.md) shows how to check. If a free model stops working (free offers change), just pick another.
 
 ## 4. Say what you want
 
@@ -45,10 +45,10 @@ The AI takes it from there: it installs what is missing, shows a short privacy n
 Tell the AI **"delete my data"**. It lists your personal files (resume, career log, saved jobs, tailored resumes, pipeline) and deletes them once you confirm. Then:
 
 - Delete the chat itself from opencode's session list, since it contains your resume text.
-- On a shared or borrowed computer, also remove your API key:
+- On a shared or borrowed computer, if you added an API key to opencode, remove it:
 
 ```bash
-opencode auth logout sealion
+opencode auth logout
 ```
 
 ## Getting updates later

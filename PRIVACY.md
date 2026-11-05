@@ -2,7 +2,7 @@
 
 SG Job Hunter is a free, open-source tool that runs on **your own computer**. It does not have a server, an account system or a database of its own, and its authors never receive your files.
 
-But it uses an **AI model**, and the AI has to read your resume to help you. This page explains exactly where your information goes, so you can decide what to share.
+But it uses an **AI model** that you choose in opencode, and the AI has to read your resume to help you. This page explains where your information goes, so you can decide what to share and which model to use.
 
 > This page explains how the tool works. It is not legal advice.
 
@@ -11,31 +11,34 @@ But it uses an **AI model**, and the AI has to read your resume to help you. Thi
 | What | Where it goes |
 |---|---|
 | Your files: resume, career log, story bank, tailored resumes, job lists, pipeline | Saved **only on your computer**, in the `sg-job-hunter` folder. Git is set never to upload them (see `.gitignore`). |
-| **Anything the AI reads or you type in the chat**, including your resume text | Sent over the internet to the **AI model provider** you connected in opencode. With the default set-up, that is the **SEA-LION API run by AI Singapore**. |
+| **Anything the AI reads or you type in the chat**, including your resume text | Sent over the internet to the **company that runs the AI model** you picked in opencode. |
 | Your job search words (for example "HR business partner") | Sent to the job boards and career sites being searched (MyCareersFuture, JobStreet and others). Your resume is **not** sent to them. |
 | Your chat history | Saved by opencode on your computer. |
 
-### "Open-source" does not mean "stays on your computer"
+## Choosing a free model for your resume
 
-The Qwen SEA-LION model is open: anyone can download it. But with the default set-up you are **not** running it on your laptop; you are using AI Singapore's online service. Your text travels to their servers for the AI to read it.
+opencode offers several **free** models (type `/models` and look for **Free**). They are run by different companies, mostly in the US and EU, and their privacy rules are **not all the same**. opencode lists each one's rules on its [Zen page](https://opencode.ai/docs/zen), under "Privacy" and "Free models". When this page was written (November 2026), the list fell into three groups:
 
-### What AI Singapore's terms say
+| What opencode says about the model | OK for your resume? |
+|---|---|
+| The provider "follows a zero-retention policy and does not use your data for model training" | **Best choice.** |
+| Data is kept for a while (for example 30 days) but "not used for training" | Acceptable if you have left out the sensitive details below. |
+| "Collected data may be used to improve the model" during its free period | **Avoid for your resume.** Fine for general questions. |
+| "Do not submit personal or confidential data" | **Do not use** for your resume. |
 
-From the [SEA-LION Terms of Use](https://sea-lion.ai/terms-of-use/) and [Privacy Policy](https://sea-lion.ai/privacy-policy/), checked November 2026:
+Free models come and go, and their rules can change. Check the Zen page when you choose one. If you already pay for an AI service you trust, you can use that model in opencode instead.
 
-- The service is run by **AI Singapore**, a national programme hosted by the National University of Singapore, under Singapore law.
-- They **may use what you send** "to provide, maintain, develop and improve our Services", and **may monitor use** of the service.
-- You are responsible for what you send: you must make sure it "does not violate any applicable law".
-- Answers may be **cached**, and the policy does not say how long chat content is kept or where it is stored.
-- AI answers "may not always be accurate". Check everything before you use it.
-- The AI must **not be used to make employment decisions about other people**. Use this tool for your own job search, not to assess other people's resumes.
+### "Open-source" or "free" does not mean "stays on your computer"
 
-Their terms can change. Read the current versions before you start. To ask about or delete data they hold, contact AI Singapore at sealion@aisingapore.org.
+A free model in opencode still runs on another company's servers; your text travels there for the AI to read it. The only way to keep everything on your laptop is to run an open model on your own computer, which needs a powerful machine.
+
+### Use it for your own job search
+
+AI providers generally do not allow their models to be used to make hiring decisions about other people. Use this tool for **your own** job search, not to assess other people's resumes. AI answers can be wrong: check everything before you use it.
 
 ## Before you share your resume
 
 Leave these out of anything you give the AI. Your resume should not include them anyway. When you **import a file** (from the `inbox` folder or a file path), the tool removes NRIC/FIN numbers, dates of birth, home addresses and referees' details *before* the AI sees the text. If you **type or paste** text into the chat yourself, it is sent exactly as you wrote it.
-
 
 - **NRIC, FIN or passport numbers.**
 - Date of birth, age, home address, marital status, religion, race or a photo.
@@ -43,19 +46,15 @@ Leave these out of anything you give the AI. Your resume should not include them
 - **Other people's details**, such as referees' names, phone numbers and emails, or names in your career log. Write "References available on request" instead.
 - Health information, and anything your current employer would treat as confidential (client names, internal figures you may not share).
 
-If you are not comfortable sending your resume to an online AI service, you can:
-
-- remove or change details before importing (for example "a regional bank" instead of the bank's name);
-- connect a different AI provider whose terms you prefer, with `/connect` and `/models` in opencode;
-- run an open model on your own computer instead, if it is powerful enough. Then nothing leaves your laptop.
+If you are still not comfortable, you can also remove or change details before importing (for example "a regional bank" instead of the bank's name).
 
 ## Deleting your data
 
 - **Files on your computer:** tell the AI "delete my data" (it runs `npm run clear-my-data`). Or delete the `sg-job-hunter` folder.
 - **The chat:** delete the session in opencode, because it contains what you shared.
-- **Your API key on a shared computer:** `opencode auth logout sealion`.
-- **Data held by the AI provider:** ask them. For SEA-LION, email sealion@aisingapore.org.
+- **An API key on a shared computer:** if you added one to opencode, remove it with `opencode auth logout`.
+- **Data held by an AI provider:** ask that provider, using the contact details in its privacy policy.
 
 ## Responsibility
 
-SG Job Hunter is provided under the [MIT License](LICENSE), "as is", without warranty. You choose what you share, which AI provider you connect, and what you send to employers. The authors do not receive, store or process your personal data, and are not responsible for how third-party services (AI providers, job boards, employers) handle it. Always check AI-written resumes and answers before using them: the tool's fact check helps, but you are the final check.
+SG Job Hunter is provided under the [MIT License](LICENSE), "as is", without warranty. You choose what you share, which AI model you use, and what you send to employers. The authors do not receive, store or process your personal data, and are not responsible for how third-party services (AI providers, job boards, employers) handle it. Always check AI-written resumes and answers before using them: the tool's fact check helps, but you are the final check.

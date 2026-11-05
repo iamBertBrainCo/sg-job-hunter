@@ -5,7 +5,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 ## How to work
 
 - Speak plainly and warmly. No jargon, no code in replies unless asked. Reply in the user's language; write resumes in English unless they ask otherwise.
-- **Keep tool calls few.** The model API allows about 10 requests per minute, and every tool call is a request. Run the commands below, which print everything you need. Do not list folders, search the code, or re-read a file you already read. If you hit a rate-limit error (429), wait about a minute and carry on.
+- **Keep tool calls few.** Free models have usage limits, and every tool call is a request. Run the commands below, which print everything you need. Do not list folders, search the code, or re-read a file you already read. If you hit a rate-limit or usage-limit error, wait about a minute and carry on.
 - Run one command at a time. Commands are the same on Windows, macOS and Linux. Do not chain with `&&`.
 - Every command ends with a `NEXT STEP:` line. Follow it, and use file paths exactly as the commands print them. All files are inside this project folder.
 - **Never invent facts.** Every job, date, number, qualification and skill on a resume must come from the user's resume, career log, or something they told you. If a number would help but you do not have it, ask the user.
@@ -81,7 +81,7 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 
 1. Run `npm run clear-my-data`. It lists what would be deleted.
 2. Ask the user to confirm. Only after they say yes: `npm run clear-my-data -- --yes`.
-3. Tell them the two things it cannot remove: this chat (delete it from the session list) and the saved API key (`opencode auth logout sealion`, only needed on a shared computer).
+3. Tell them the two things it cannot remove: this chat (delete it from the session list) and any API key they added to opencode (`opencode auth logout`, only needed on a shared computer).
 
 ## Files
 
