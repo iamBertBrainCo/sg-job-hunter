@@ -2,7 +2,7 @@
 
 SG Job Hunter is a free, open-source tool that runs on **your own computer**. It does not have a server, an account system or a database of its own, and its authors never receive your files.
 
-But it uses an **AI model** that you choose in opencode, and the AI has to read your resume to help you. This page explains where your information goes, so you can decide what to share and which model to use.
+But it uses an **AI model** that you choose (in opencode, or in Claude Code, Codex, Antigravity or another tool you already pay for), and the AI has to read your resume to help you. This page explains where your information goes, so you can decide what to share and which model to use.
 
 > This page explains how the tool works. It is not legal advice.
 
@@ -11,9 +11,9 @@ But it uses an **AI model** that you choose in opencode, and the AI has to read 
 | What | Where it goes |
 |---|---|
 | Your files: resume, career log, story bank, tailored resumes, job lists, pipeline | Saved **only on your computer**, in the `sg-job-hunter` folder. Git is set never to upload them (see `.gitignore`). |
-| **Anything the AI reads or you type in the chat**, including your resume text | Sent over the internet to the **company that runs the AI model** you picked in opencode. |
+| **Anything the AI reads or you type in the chat**, including your resume text | Sent over the internet to the **company that runs the AI model** you picked. |
 | Your job search words (for example "HR business partner") | Sent to the job boards and career sites being searched (MyCareersFuture, JobStreet and others). Your resume is **not** sent to them. |
-| Your chat history | Saved by opencode on your computer. |
+| Your chat history | Saved by your AI tool. opencode keeps it on your computer; some tools (for example the Claude, ChatGPT and Gemini apps) also keep it in your online account. |
 
 ## Choosing a free model for your resume
 
@@ -26,7 +26,16 @@ opencode offers several **free** models (type `/models` and look for **Free**). 
 | "Collected data may be used to improve the model" during its free period | **Avoid for your resume.** Fine for general questions. |
 | "Do not submit personal or confidential data" | **Do not use** for your resume. |
 
-Free models come and go, and their rules can change. Check the Zen page when you choose one. If you already pay for an AI service you trust, you can use that model in opencode instead.
+Free models come and go, and their rules can change. Check the Zen page when you choose one. If you already pay for an AI service you trust, you can use that model in opencode instead, or use that company's own tool (see below).
+
+## If you use a paid plan (Claude, ChatGPT, Gemini)
+
+You can run SG Job Hunter in Claude Code, Codex or Antigravity instead of opencode. Your resume then goes to that company, under your plan's privacy rules. Personal plans and work plans are often treated differently:
+
+- **Personal plans** (for example Claude Pro or Max, ChatGPT Plus or Pro, Google AI plans): the company may use your chats to improve its models unless you turn this off. Look in the app's privacy or data settings (at the time of writing: "Help improve Claude" in Claude, "Improve the model for everyone" in ChatGPT, and Gemini Apps Activity in Google). Turn it off before you share your resume if you prefer.
+- **Work or team plans** (for example Claude Team or Enterprise, ChatGPT Business or Enterprise): these usually do not train on your data by default, but your employer may be able to see what you send. Use a personal plan for your own job search.
+
+Settings and names change, so check the company's privacy page when you start.
 
 ### "Open-source" or "free" does not mean "stays on your computer"
 
@@ -51,8 +60,8 @@ If you are still not comfortable, you can also remove or change details before i
 ## Deleting your data
 
 - **Files on your computer:** tell the AI "delete my data" (it runs `npm run clear-my-data`). Or delete the `sg-job-hunter` folder.
-- **The chat:** delete the session in opencode, because it contains what you shared.
-- **An API key on a shared computer:** if you added one to opencode, remove it with `opencode auth logout`.
+- **The chat:** delete the session or chat in your AI tool, because it contains what you shared. If your tool also keeps chats in your online account, delete it there too.
+- **Signing out on a shared computer:** in opencode, remove any API key you added with `opencode auth logout`. In Claude Code type `/logout`; in Codex run `codex logout`; in Antigravity sign out from the app.
 - **Data held by an AI provider:** ask that provider, using the contact details in its privacy policy.
 
 ## Responsibility

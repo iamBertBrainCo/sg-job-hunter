@@ -81,7 +81,7 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 
 1. Run `npm run clear-my-data`. It lists what would be deleted.
 2. Ask the user to confirm. Only after they say yes: `npm run clear-my-data -- --yes`.
-3. Tell them the two things it cannot remove: this chat (delete it from the session list) and any API key they added to opencode (`opencode auth logout`, only needed on a shared computer).
+3. Tell them the two things it cannot remove: this chat (delete it from the session or chat list of the tool they are using) and, on a shared computer only, their sign-in to that tool (`opencode auth logout` in opencode, `/logout` in Claude Code, `codex logout` in Codex, sign out in Antigravity). Mention only the tool they are using.
 
 ## Files
 

@@ -23,6 +23,8 @@ From a fresh laptop to a tailored, ATS-checked resume and an Apply link in about
 
 3. In opencode, type `/models` and choose a model marked **Free**. No account or API key is needed. For your resume, pick one whose provider keeps no data (see [PRIVACY.md](PRIVACY.md)).
 
+   Already pay for Claude, ChatGPT or Gemini? Instead of `opencode`, run `claude` or `codex` in the folder, or open the folder in Antigravity. The rest of this walkthrough is the same.
+
 ## Step 2: Tell the agent what you want (2 minutes)
 
 Type, in your own words:

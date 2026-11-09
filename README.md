@@ -1,6 +1,6 @@
 # SG Job Hunter
 
-> A Singapore-first job search assistant for PMETs, built for [opencode](https://opencode.ai) and free to use. The goal is simple: help people in Singapore find a job using only free tools. You chat with the AI; it finds jobs in Singapore and ASEAN, writes an ATS-friendly resume for each job you pick, and keeps your applications in one pipeline with an Apply link for each.
+> A Singapore-first job search assistant for PMETs, built for [opencode](https://opencode.ai) and free to use (it also works in Claude Code, Codex and Antigravity if you already pay for one). The goal is simple: help people in Singapore find a job using only free tools. You chat with the AI; it finds jobs in Singapore and ASEAN, writes an ATS-friendly resume for each job you pick, and keeps your applications in one pipeline with an Apply link for each.
 
 **Created by:** [Bertram Yang](https://linkedin.com/in/bertramyang) · **License:** MIT
 
@@ -44,6 +44,18 @@ In opencode, type `/models` and choose a model marked **Free**. No account, API 
 
 Then type what you are looking for, for example **"I want to find data analyst jobs"**. The agent follows [AGENTS.md](AGENTS.md), installs anything missing (`npm run check`), and walks you through the rest.
 
+### Already pay for Claude, ChatGPT or Gemini?
+
+You don't need opencode. Clone the folder as above, open the `sg-job-hunter` folder in the coding agent you already have, and type what you are looking for:
+
+| You pay for | Use | How to start |
+|---|---|---|
+| Claude (Pro or Max) | [Claude Code](https://claude.com/claude-code): terminal, desktop app or VS Code | `claude` inside the folder, or open the folder in the app |
+| ChatGPT (Plus or Pro) | [Codex](https://developers.openai.com/codex): terminal, app or VS Code | `codex` inside the folder, or open the folder in the app |
+| Google AI (Gemini) | [Antigravity](https://antigravity.google) or Gemini CLI | Open the folder as your workspace, or `gemini` inside the folder |
+
+Each one reads the same instructions (`AGENTS.md`; `CLAUDE.md` and `GEMINI.md` point to it), so the steps are the same. Any other coding agent that can run terminal commands and reads `AGENTS.md` should work too. Check your plan's privacy settings before you share your resume; [PRIVACY.md](PRIVACY.md) explains what to look for.
+
 ## Commands (what the agent runs for you)
 
 | Command | What it does |
@@ -64,7 +76,7 @@ Then type what you are looking for, for example **"I want to find data analyst j
 
 ## Privacy
 
-Your files stay on your computer. But **the AI has to read your resume to help you**, and anything it reads or you type in the chat is sent to the company running the AI model you choose in opencode, usually in the US or EU. Some free models keep what you send or use it to improve the model; others keep nothing. Before you share your resume, the agent shows a short notice and asks you to agree. When you import a resume file, NRIC/FIN numbers, dates of birth, home addresses and referees' details are removed before the AI sees it. Read [PRIVACY.md](PRIVACY.md) for what to leave out, other options (such as running a model on your own computer) and how to delete everything.
+Your files stay on your computer. But **the AI has to read your resume to help you**, and anything it reads or you type in the chat is sent to the company running the AI model you use (in opencode, Claude Code, Codex or another tool), usually in the US or EU. Some free models keep what you send or use it to improve the model; others keep nothing. Before you share your resume, the agent shows a short notice and asks you to agree. When you import a resume file, NRIC/FIN numbers, dates of birth, home addresses and referees' details are removed before the AI sees it. Read [PRIVACY.md](PRIVACY.md) for what to leave out, other options (such as running a model on your own computer) and how to delete everything.
 
 ## Your files
 
