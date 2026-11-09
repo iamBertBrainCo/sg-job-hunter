@@ -126,11 +126,11 @@ All PMET sectors. Salary benchmarks for reference are in [data/salary-benchmarks
 
 ## For developers
 
-The guided commands live in `lib/flow/`; job-board connectors are in `lib/providers/`. The earlier command-line tools from v2.0 (scanner, 6-block evaluator, tracker scripts) are still in `lib/` but are not part of the supported flow. For example, `node lib/scan.mjs` with a `portals.yml` copied from `portals.example.yml`.
+The guided commands live in `lib/flow/`; job-board connectors are in `lib/providers/`. Resume designs are the `cv-template.*.html` files with `ats/` and `sections/`. The older v2.0 command-line tools inherited from career-ops were removed in v2.2; they are still in the git history.
 
 ## Contributing
 
-Contributions welcome: Singapore and ASEAN employers for `sources.example.yml`, better market rules in [modes/sg/_shared.md](modes/sg/_shared.md), salary data, translations, and bug reports.
+Contributions welcome: Singapore and ASEAN employers for `sources.example.yml`, better Singapore keywords in `lib/flow/keywords.mjs`, salary data, translations, and bug reports.
 
 ## Credits
 

@@ -1,5 +1,11 @@
 # Changelog — SG Job Hunter
 
+## v2.2.0 (November 2026) — Works with paid AI tools; leaner code
+
+- **Use the AI tool you already pay for.** Claude Code, Codex and Antigravity read the same instructions as opencode (`CLAUDE.md` and `GEMINI.md` point to `AGENTS.md`). The README, setup guide and privacy page explain paid plans.
+- **Removed unused code inherited from career-ops:** about 255 scripts nothing ran (the old scanner, evaluator, tracker, dashboards, plugins, scaffolder and about 130 job-board connectors not used for Singapore or ASEAN), plus unused settings files, fonts and the `dotenv` and `node-fetch` packages. Every `npm run` command works as before.
+- **Fixed:** `lib/data-static` was a link to a folder on the author's computer and was broken for everyone else; it is removed.
+
 ## v2.1.0 (November 2026) — Guided flow for opencode
 
 - **Talk to an AI agent instead of running tools.** Open opencode in the folder and say "I want to find <role> jobs". The agent follows `AGENTS.md`.

@@ -1,6 +1,6 @@
 {
   "name": "sg-job-hunter",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Singapore-first job search for PMETs, run by an AI agent in opencode: find SG/ASEAN jobs, tailor ATS-safe resumes, track applications",
   "main": "lib/index.mjs",
   "type": "module",
@@ -49,10 +49,8 @@
   },
   "homepage": "https://github.com/iamBertBrainCo/sg-job-hunter#readme",
   "dependencies": {
-    "dotenv": "^18.0.9",
     "js-yaml": "^5.5.0",
     "mammoth": "1.13.0",
-    "node-fetch": "^3.3.2",
     "playwright": "^1.40.0",
     "unpdf": "1.8.1"
   },

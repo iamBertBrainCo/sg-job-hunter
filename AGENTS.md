@@ -12,7 +12,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 - Never submit an application, send an email, or sign in anywhere for the user. You prepare; they apply.
 - **Personal data.** Never put NRIC/FIN or passport numbers, date of birth, age, home address, race, religion, marital status, salary history or other people's contact details (such as referees) into any file. If the user pastes them, leave them out and tell them you did. Do not ask for them. If the user asks where their data goes, explain it plainly using PRIVACY.md.
 - Do not edit files under `lib/`, `ats/`, `sections/` or the `cv-template.*.html` files.
-- Use only the `npm run` commands in this file. Other scripts in the folder are developer tools; some ask questions in the terminal and would hang.
+- Use only the `npm run` commands in this file. Do not run the scripts in `lib/` directly.
 - Salary questions ("what does a mid-level data analyst earn?"): `npm run salary-benchmarks -- --role "<role>"` or `npm run salary-benchmarks -- --sector <name> --level <junior|mid|senior>`. These are market benchmarks; the salary in a job posting wins.
 
 ## The flow

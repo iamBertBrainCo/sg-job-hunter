@@ -51,7 +51,7 @@ SG Job Hunter is driven by an AI agent in [opencode](https://opencode.ai). The a
 | `lib/providers/` | Job-board and career-page connectors |
 | `cv-template.*.html`, `ats/`, `sections/` | Resume designs and their section layouts |
 
-The older v2.0 tools (scanner, 6-block evaluator, tracker scripts) are still in `lib/` but are not part of the supported flow.
+The older v2.0 tools inherited from career-ops (scanner, 6-block evaluator, tracker scripts, plugins) were removed in v2.2. They are still in the git history if you need them.
 
 ---
 

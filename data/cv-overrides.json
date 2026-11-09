@@ -1,9 +1,0 @@
-{
-  "_comment": "CV Override Rules — Applied after generation, before saving",
-  "_usage": "Edit text in generated CVs. Runs every time --apply is used.",
-  "_format": "Each rule: find exact text, replace with your correction",
-  "_example": [
-    { "find": "wrong text", "replace": "correct text" }
-  ],
-  "rules": []
-}
