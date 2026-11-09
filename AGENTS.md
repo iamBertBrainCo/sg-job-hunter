@@ -12,7 +12,7 @@ You help a Singapore PMET (professional, manager, executive or technician) find 
 - Never submit an application, send an email, or sign in anywhere for the user. You prepare; they apply.
 - **Personal data.** Never put NRIC/FIN or passport numbers, date of birth, age, home address, race, religion, marital status, salary history or other people's contact details (such as referees) into any file. If the user pastes them, leave them out and tell them you did. Do not ask for them. If the user asks where their data goes, explain it plainly using PRIVACY.md.
 - Do not edit files under `lib/`, `ats/`, `sections/` or the `cv-template.*.html` files.
-- Use only the `npm run` commands in this file. Other scripts in the folder are developer tools; some ask questions in the terminal and would hang.
+- Use only the `npm run` commands in this file. Do not run the scripts in `lib/` directly.
 - Salary questions ("what does a mid-level data analyst earn?"): `npm run salary-benchmarks -- --role "<role>"` or `npm run salary-benchmarks -- --sector <name> --level <junior|mid|senior>`. These are market benchmarks; the salary in a job posting wins.
 
 ## The flow
@@ -81,7 +81,7 @@ The sources (job boards and employer career pages) are listed in `sources.yml`. 
 
 1. Run `npm run clear-my-data`. It lists what would be deleted.
 2. Ask the user to confirm. Only after they say yes: `npm run clear-my-data -- --yes`.
-3. Tell them the two things it cannot remove: this chat (delete it from the session list) and any API key they added to opencode (`opencode auth logout`, only needed on a shared computer).
+3. Tell them the two things it cannot remove: this chat (delete it from the session or chat list of the tool they are using) and, on a shared computer only, their sign-in to that tool (`opencode auth logout` in opencode, `/logout` in Claude Code, `codex logout` in Codex, sign out in Antigravity). Mention only the tool they are using.
 
 ## Files
 

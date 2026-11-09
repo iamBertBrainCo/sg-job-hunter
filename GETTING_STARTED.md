@@ -10,6 +10,8 @@ You need three free programs, then you talk to the AI.
 | Git | https://git-scm.com | `git --version` |
 | opencode | https://opencode.ai | `opencode --version` |
 
+**Already pay for Claude, ChatGPT or Gemini?** You can skip opencode and use Claude Code, Codex or Antigravity instead. See [step 3](#already-using-claude-code-codex-or-antigravity).
+
 On Windows, use **Windows Terminal** or **PowerShell** for the commands below.
 
 ## 2. Download SG Job Hunter
@@ -34,6 +36,10 @@ or in the **opencode desktop app**: open the `sg-job-hunter` folder as your proj
 
 Then choose an AI model: type `/models` and pick one marked **Free**. No account or API key is needed. Because you will share your resume, pick a free model whose provider keeps no data and does not train on it, and avoid any that say not to submit personal data. [PRIVACY.md](PRIVACY.md) shows how to check. If a free model stops working (free offers change), just pick another.
 
+### Already using Claude Code, Codex or Antigravity?
+
+Open the same `sg-job-hunter` folder in that tool instead: run `claude`, `codex` or `gemini` from inside the folder, or open the folder as your project in the desktop app or VS Code. It reads the same instructions, so everything below works the same way. Before you share your resume, check your plan's privacy settings ([PRIVACY.md](PRIVACY.md) explains what to look for).
+
 ## 4. Say what you want
 
 > I want to find marketing manager jobs
@@ -44,12 +50,14 @@ The AI takes it from there: it installs what is missing, shows a short privacy n
 
 Tell the AI **"delete my data"**. It lists your personal files (resume, career log, saved jobs, tailored resumes, pipeline) and deletes them once you confirm. Then:
 
-- Delete the chat itself from opencode's session list, since it contains your resume text.
-- On a shared or borrowed computer, if you added an API key to opencode, remove it:
+- Delete the chat itself from your AI tool's session or chat list, since it contains your resume text.
+- On a shared or borrowed computer, sign out of the AI tool. In opencode, if you added an API key, remove it:
 
 ```bash
 opencode auth logout
 ```
+
+In Claude Code type `/logout`; in Codex run `codex logout`; in Antigravity sign out from the app.
 
 ## Getting updates later
 
